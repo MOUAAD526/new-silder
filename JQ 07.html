@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider</title>
+</head>
+<style>
+   * {
+        margin: 0px;box-sizing: border-box;
+        padding: 0px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   }
+section{
+    overflow: hidden;
+    margin: 20px auto;
+    width: 70%;
+    background-color: wheat;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    max-height: 250px;
+}
+.item{
+    width: 10%;
+    float: left;
+    background-color: rgb(0, 140, 255);
+    height: 250px;
+    margin: 0;
+    text-align: center;cursor: pointer;
+   
+}
+.item:hover{
+    background-color: rgb(101, 216, 178);
+    padding-top: 100px;
+    font-size: 25px;
+    transition: all 0.7s ease-in-out;
+}
+.info{ height: 250px;
+       text-align: center;
+       float: left;
+       background-color: rgb(62, 62, 173);
+       display: none;margin: 0; 
+}
+img{
+    height: 250px;
+    width: 478px;
+}
+</style>
+<body>
+
+  <section>
+
+    <div class="item">item1</div>
+    <div class="info"><img src="D2.jpg" alt="" srcset=""></div>
+    <div class="item">item2</div>
+    <div class="info"><img src="D4.jpg" alt="" srcset=""></div>
+    <div class="item">item3</div>
+    <div class="info"><img src="2.jpeg" alt="" srcset=""></div>
+    <div class="item">item4</div>
+    <div class="info"><img src="D3.jpg" alt="" srcset=""></div>
+    <div class="item">item5</div>
+    <div class="info"><img src="D1.jpg" alt="" srcset=""></div>
+
+  </section>
+    
+
+
+
+
+    <script src="uncompress jquery-3.5.1.js"  ></script>
+<script>
+
+$(function() {
+
+    $('.info').first().show().animate({width:'50%'})
+    $('.item').click(function() {
+        $(this).next().show().animate({width:'50%'},700) ; //.siblings('.info').animate({width:'0'},1);
+        $('.info').not($(this).next()).animate({width:'0'},1);
+    })
+
+
+});
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
